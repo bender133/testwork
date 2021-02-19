@@ -4,9 +4,9 @@
 namespace app\controllers;
 
 
-use yii\web\Controller;
+use app\controllers\AppController;
 
-class MyController extends Controller
+class MyController extends AppController
 {
     public function actionIndex() {
         return $this->render('index', [
