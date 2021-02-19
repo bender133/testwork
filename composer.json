@@ -32,6 +32,7 @@
         "codeception/module-asserts": "^1.0.0"
     },
     "config": {
+        "vendor-dir":"B:/OpenServer/domains/vendor",
         "process-timeout": 1800,
         "fxp-asset": {
             "enabled": false
