@@ -7,15 +7,18 @@ use Yii;
 
 class PostController extends AppController
 {
-    public function actionTest() {
 
-        $names = ['rere' => 'Ivan', 'rprp' => 'Semen', 'ututu' => 'Petr', 'uiuiu' => 'Mihail',];
+//    public $layout = 'basic'; // слой для контроллера
 
-//        $this->debug(Yii::$app);
-//        $this->debug($names);
+    public function actionIndex() {
 
-        return $this->render('test', [
-            'names' => $names,
-        ]);
+        return $this->render('index');
     }
+    public function actionShow() {
+
+        $this->layout = 'basic'; //шаблон отдеьной страницы
+
+        return $this->render('show');
+    }
+
 }
