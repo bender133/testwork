@@ -8,7 +8,7 @@ use Yii;
 class PostController extends AppController
 {
 
-//    public $layout = 'basic'; // слой для контроллера
+    public $layout = 'basic'; // слой для контроллера
 
     public function actionIndex() {
 
@@ -16,7 +16,7 @@ class PostController extends AppController
     }
     public function actionShow() {
 
-        $this->layout = 'basic'; //шаблон отдеьной страницы
+//        $this->layout = 'basic'; //шаблон отдеьной страницы
 
         return $this->render('show');
     }
