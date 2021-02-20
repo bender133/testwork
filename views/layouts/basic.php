@@ -9,13 +9,14 @@ AppAsset::register($this);
 
 <?php $this->beginPage() ?>
 <!doctype html>
-<html lang="en">
+    <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="UTF-8">
+    <?php $this->registerCsrfMetaTags() ?>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title><?= $this->title ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -37,6 +38,10 @@ AppAsset::register($this);
                 <?= Html::a('Статья', ['post/show']) ?>
             </li>
         </ul>
+
+        <?php if(isset($this->blocks['block1'])):?>
+            <?= $this->blocks['block1'] ?>
+        <?php endif; ?>
 
         <?= $content ?>
 
