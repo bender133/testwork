@@ -29,7 +29,7 @@ AppAsset::register($this);
 
             </li>
             <li class="nav-item">
-                <?= Html::a('Главная', '/site/index') ?>
+                <?= Html::a('Главная', '/') ?>
             </li>
             <li class="nav-item">
                 <?= Html::a('Статьи', ['post/index']) ?>

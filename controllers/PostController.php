@@ -20,17 +20,30 @@ class PostController extends AppController
     }
 
     public function actionIndex() {
-        if(Yii::$app->request->isAjax) {
-
-           debug( Yii::$app->request->post());
-            return 'test';
-        }
-
+//        if(Yii::$app->request->isAjax) {
+//
+//           debug( Yii::$app->request->post());
+//            return 'test';
+//        }
+        $post = TestForm::findOne(2);
+//        $post->delete();
+//        $this->debug($post);
         $model = new TestForm();
+
+        if($model->load(Yii::$app->request->post())) {
+            if($model->save()) {
+                Yii::$app->session->setFlash('success', 'Статья сохранена'); // todo: не работает флеш сообщение
+                return $this->refresh();
+            } else {
+                Yii::$app->session->setFlash('error', 'Ошибка');
+            }
+
+        }
         return $this->render('index', [
             'model' => $model
         ]);
     }
+
     public function actionShow() {
         $this->view->title = "ИЗ контроллера, Show";
         $this->view->registerMetaTag(['name' => 'keywords', 'content' => 'ключевики']);
@@ -52,7 +65,7 @@ class PostController extends AppController
 //        $cats = Category::findBySql($query, [':search' => '%pp%'])->all();
 //        $cats = Category::findOne(694);
 //        $cats = Category::find()->all(); //ленивая загрузка
-//        $cats = Category::find()->with('products')->where(['id' => 694])->all(); // жадная загрузка
+        $cats = Category::find()->with('products')->where(['id' => 694])->all(); // жадная загрузка
 
 //        $this->layout = 'basic'; //шаблон отдеьной страницы
 

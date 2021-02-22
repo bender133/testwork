@@ -10,6 +10,7 @@ use yii\helpers\Html;
 <?= $form->field($model, 'name') ?>
 <?= $form->field($model, 'email')->input('email') ?>
 <?= $form->field($model, 'text')->textarea(['rows' => 5]) ?>
+<?= \yii\jui\DatePicker::widget(['name' => 'attributeName']) ?>
 <?= Html::submitButton('Send', ['class' => 'btn btn-success']) ?>
 <?php $form = ActiveForm::end(); ?>
 

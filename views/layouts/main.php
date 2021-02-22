@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -57,6 +58,8 @@ AppAsset::register($this);
     ?>
 
     <div class="container">
+
+        <?= Html::a('Show', Url::to(['post/show'])) ?>
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>

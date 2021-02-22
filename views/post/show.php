@@ -9,6 +9,9 @@
 
 
 <h1>Show</h1>
+
+
+<?//= \app\components\MyWidget::widget(['name' => 'Liza']);?>
 <!--<button class="btn btn-success" id="btn">Click me...</button>-->
 <?php ////$this->registerJsFile('@web/js/scripts.js', ['depends' => 'yii\web\YiiAsset']) ?>
 <!--
@@ -32,11 +35,25 @@
 //      });
 //    });
 //JS;
+?>
+
+    <?php \app\components\MyWidget::begin() ?>
+        <h1>hello world!</h1>
+    <?php \app\components\MyWidget::end() ?>
 
 
+
+
+
+
+
+
+
+<?php
 
 //$this->registerJs($js);
 
-debug($cats);
+//debug($cats);
 //echo count($cats->products);
 //debug($cats);
+?>
